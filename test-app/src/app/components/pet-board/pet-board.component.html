@@ -1,0 +1,27 @@
+<h4>Pet Management</h4>
+
+<input type="text" placeholder="Enter pet name" [(ngModel)]="petName">
+<button (click)="addNewPet()">Add pet</button>
+
+<div>
+  <div>
+    <h3>Listed</h3>
+    <div class="listed-pets" *ngFor="let pet of getPetsPerStatus('listed')">
+      <p>Name: {{ pet.name }}</p>
+      <button (click)="moveToNext()">Move</button>
+    </div>
+  </div>
+  <div>
+    <h3>Examining</h3>
+    <div class="examining-pets" *ngFor="let pet of getPetsPerStatus('examining')">
+      <p>Name: {{ pet.name }}</p>
+      <button (click)="moveToNext()">Move</button>
+    </div>
+  </div>
+  <div>
+    <h3>Finally back to Hooman</h3>
+    <div class="back-to-hooman-pets" *ngFor="let pet of getPetsPerStatus('finally_back_to_hooman')">
+      <p>Name: {{ pet.name }}</p>
+    </div>
+  </div>
+</div>
